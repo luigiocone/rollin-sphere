@@ -7,16 +7,12 @@ public class StaminaManager : StatManager
     readonly Modifier m_ConstantIncrease;
     Modifier m_ConstantIncreaseCopy; 
     const float k_PauseDuration = 1f;
+    const string k_ConstantIncreaseResource = "Modifiers/Stamina-Up-Constant-Increase";
 
     public StaminaManager(StatsCollectionManager stats, Stat stat) : base(stats, stat)
     {
         Stamina = stat as PersistentStat;
-        m_ConstantIncrease = new();
-        m_ConstantIncrease.StatId = StatId.STAMINA;
-        m_ConstantIncrease.Type = Modifier.ModifierType.ADDER;
-        m_ConstantIncrease.Amount = 5f;
-        m_ConstantIncrease.Duration = float.PositiveInfinity;
-        m_ConstantIncrease.ApplyPeriod = 0.1f;
+        m_ConstantIncrease = Resources.Load<Modifier>(k_ConstantIncreaseResource);
         m_ConstantIncreaseCopy = Stamina.CopyModifier(m_ConstantIncrease);
 
         Stamina.OnZero += (StatValueChangeEvent evt) => OnZero();

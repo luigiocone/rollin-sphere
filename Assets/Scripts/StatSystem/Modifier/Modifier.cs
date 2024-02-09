@@ -1,8 +1,8 @@
 using System;
 using UnityEngine;
 
-[Serializable]
-public class Modifier : IComparable<Modifier>
+[CreateAssetMenu(fileName = "New Modifier", menuName = "ScriptableObjects/Stats/Modifier")]
+public class Modifier : ScriptableObject, IComparable<Modifier>
 {
     public enum ModifierType
     {                           // Enum value defines the application order

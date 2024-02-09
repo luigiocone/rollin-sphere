@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using UnityEngine;
 using UnityEngine.Pool;
 
 public class ModifiersCollection
@@ -22,7 +23,7 @@ public class ModifiersCollection
         m_Modifiers = m_ActiveModifiers.AsReadOnly();
     }
 
-    Modifier CreatePooledItem() => new Modifier();
+    Modifier CreatePooledItem() => ScriptableObject.CreateInstance<Modifier>();
 
 
     public ReadOnlyCollection<Modifier> GetList()

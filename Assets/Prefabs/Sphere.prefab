@@ -190,6 +190,7 @@ MonoBehaviour:
   MaxAirAcceleration: 6
   MaxClimbAcceleration: 40
   JumpHeight: 2
+  JumpStaminaCost: 50
   MaxAirJumps: 0
   MaxGroundAngle: 40
   MaxStairsAngle: 50
@@ -256,6 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e82a80577ef5a4d1f87a20d30a5348bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelfDestructionY: -20
 --- !u!114 &3717041651524466475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,13 +412,7 @@ MonoBehaviour:
   cooldownTime: 0
   fullShieldAddedRadius: 1.5
   BulletReflectionSpreadAngle: 1
-  StaminaConsumption:
-    StatId: 2
-    Type: 100
-    Amount: -20
-    source: {fileID: 0}
-    Duration: Infinity
-    ApplyPeriod: 0.1
+  StaminaConsumption: {fileID: 11400000, guid: fc0bc09c07d0c6f46bd4be41c76787fd, type: 2}
   ModifiersOnReflected: []
 --- !u!1 &8968208464455024369
 GameObject:
@@ -569,12 +565,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf602949ac2cc4d67aa18a1ac00c3503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FlashData: []
   BodyRenderers:
   - {fileID: 9139446718566209828}
-  OnHitBodyGradient:
+  OnDamageBodyGradient:
     serializedVersion: 2
-    key0: {r: 0.83921576, g: 0.10196079, b: 0.10980393, a: 1}
+    key0: {r: 1, g: 1, b: 1, a: 1}
     key1: {r: 1, g: 1, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
@@ -583,7 +578,7 @@ MonoBehaviour:
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 37779
+    ctime1: 65535
     ctime2: 0
     ctime3: 0
     ctime4: 0
@@ -591,7 +586,7 @@ MonoBehaviour:
     ctime6: 0
     ctime7: 0
     atime0: 0
-    atime1: 37394
+    atime1: 65535
     atime2: 0
     atime3: 0
     atime4: 0

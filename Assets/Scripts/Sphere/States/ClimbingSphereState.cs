@@ -2,17 +2,14 @@ using UnityEngine;
 
 public class ClimbingSphereState : DefaultSphereState
 {
-    Modifier m_StaminaModifierTemplate = new();
+    Modifier m_StaminaModifierTemplate;
     Modifier m_StaminaModifierCopy;
+    const string k_StaminaModifierResource = "Modifiers/Stamina-Down-Climbing";
 
     public ClimbingSphereState(SpherePhysics status, SphereStateMachine fsm) 
         : base(status, fsm)
     {
-        m_StaminaModifierTemplate.StatId = StatId.STAMINA;
-        m_StaminaModifierTemplate.Type = Modifier.ModifierType.ADDER;
-        m_StaminaModifierTemplate.Amount = -10f;
-        m_StaminaModifierTemplate.Duration = float.PositiveInfinity;
-        m_StaminaModifierTemplate.ApplyPeriod = 0.1f;
+        m_StaminaModifierTemplate = Resources.Load<Modifier>(k_StaminaModifierResource);
     }
 
     public override ISphereState.Label StateLabel => 

@@ -9311,12 +9311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Modifiers:
-  - StatId: 0
-    Type: 100
-    Amount: 50
-    source: {fileID: 0}
-    Duration: 0
-    ApplyPeriod: 0
+  - {fileID: 11400000, guid: 985b1a26f9462074cb8578aecbf893fd, type: 2}
   FollowAgent: 1
   FollowingAcceleration: 20
   OnCollectVfx: {fileID: 133326187904302500, guid: 1112a6c6b177d4e5abc4881e22ac8152,
